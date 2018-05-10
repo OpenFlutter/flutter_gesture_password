@@ -7,7 +7,7 @@
 For help getting started with Flutter, view our online [documentation](https://flutter.io/).
 
 For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
-![image](https://github.com/zhangruiyu/refresh_wow/blob/master/wow.gif)
+![image](https://github.com/zhangruiyu/flutter_gesture_password/blob/master/wow.gif)
 
 #属性
 * selectedColor 选中的颜色
