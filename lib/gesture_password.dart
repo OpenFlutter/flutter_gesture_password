@@ -1,10 +1,8 @@
-import 'dart:collection';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gesture_password/CircleItemPainter.dart';
-import 'dart:ui' as ui;
-
+import 'package:gesture_password/circle_item_painter.dart';
 import 'package:meta/meta.dart';
 
 class GesturePassword extends StatefulWidget {

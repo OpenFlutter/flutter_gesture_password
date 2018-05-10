@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gesture_password/GesturePassword.dart';
-import 'package:gesture_password/MiniGesturePassword.dart';
+import 'package:gesture_password/gesture_password.dart';
+import 'package:gesture_password/mini_gesture_password.dart';
 
 void main() => runApp(new MyApp());
 
