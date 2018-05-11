@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gesture_password/MiniCircleView.dart';
+import 'package:gesture_password/mini_circle_view.dart';
 
 class MiniGesturePassword extends StatefulWidget {
   final MiniItemAttribute attribute;

@@ -1,9 +1,9 @@
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gesture_password/circle_item_painter.dart';
-import 'package:meta/meta.dart';
 
 class GesturePassword extends StatefulWidget {
   final ValueChanged<String> successCallback;
@@ -50,7 +50,7 @@ class _GesturePasswordState extends State<GesturePassword> {
         setState(() {
           RenderBox box = context.findRenderObject();
           touchPoint = box.globalToLocal(details.globalPosition);
-          //会绘画越界
+          //防止绘画越界
           if (touchPoint.dy < 0) {
             touchPoint = new Offset(touchPoint.dx, 0.0);
           }
