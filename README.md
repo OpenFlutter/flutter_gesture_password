@@ -91,26 +91,30 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             new Center(
                 child: new MiniGesturePassword(key: miniGesturePassword)),
-            new Container(
-              color: Colors.red,
-              margin: const EdgeInsets.only(top: 100.0),
-              child: new GesturePassword(
-                successCallback: (s) {
-                  print("successCallback$s");
-                  scaffoldState.currentState?.showSnackBar(
-                      new SnackBar(content: new Text('successCallback:$s')));
-                  miniGesturePassword.currentState?.setSelected('');
-                },
-                failCallback: () {
-                  print('failCallback');
-                  scaffoldState.currentState?.showSnackBar(
-                      new SnackBar(content: new Text('failCallback')));
-                  miniGesturePassword.currentState?.setSelected('');
-                },
-                selectedCallback: (str) {
-                  miniGesturePassword.currentState?.setSelected(str);
-                },
-              ),
+            new LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return new Container(
+                  color: Colors.red,
+                  margin: const EdgeInsets.only(top: 100.0),
+                  child: new GesturePassword(
+                    successCallback: (s) {
+                      print("successCallback$s");
+                      scaffoldState.currentState?.showSnackBar(new SnackBar(
+                          content: new Text('successCallback:$s')));
+                      miniGesturePassword.currentState?.setSelected('');
+                    },
+                    failCallback: () {
+                      print('failCallback');
+                      scaffoldState.currentState?.showSnackBar(
+                          new SnackBar(content: new Text('failCallback')));
+                      miniGesturePassword.currentState?.setSelected('');
+                    },
+                    selectedCallback: (str) {
+                      miniGesturePassword.currentState?.setSelected(str);
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
