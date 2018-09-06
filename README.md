@@ -15,7 +15,7 @@ For help on editing package code, view the [documentation](https://flutter.io/de
  
 ```yaml
 dependencies:
-  gesture_password: "^0.0.2"
+  gesture_password: "^0.0.4"
 ```
 
 2. Install it
