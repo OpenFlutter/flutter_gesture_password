@@ -32,7 +32,7 @@ import 'package:gesture_password/mini_gesture_password.dart';
 ```
 
 ##属性
-* width 空间宽度(xia-weiyang想法)
+* width 控件宽度(xia-weiyang想法)
 * selectedColor 选中的颜色
 * normalColor:  没选中的颜色
 * lineStrokeWidth: 线宽
