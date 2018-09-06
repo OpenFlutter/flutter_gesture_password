@@ -11,13 +11,16 @@ class GesturePassword extends StatefulWidget {
   final VoidCallback failCallback;
   final ItemAttribute attribute;
   final double height;
+  final double width;
 
   GesturePassword(
       {@required this.successCallback,
         this.failCallback,
         this.selectedCallback,
         this.attribute: ItemAttribute.normalAttribute,
-        this.height: 300.0});
+        this.height: 300.0,
+        this.width,
+      });
 
   @override
   _GesturePasswordState createState() => new _GesturePasswordState();
@@ -30,7 +33,7 @@ class _GesturePasswordState extends State<GesturePassword> {
 
   @override
   void initState() {
-    num hor = MediaQueryData.fromWindow(ui.window).size.width / 6;
+    num hor = (widget.width??MediaQueryData.fromWindow(ui.window).size.width) / 6;
     num ver = widget.height / 6;
     //每个圆的中心点
     for (int i = 0; i < 9; i++) {
@@ -44,7 +47,7 @@ class _GesturePasswordState extends State<GesturePassword> {
   @override
   Widget build(BuildContext context) {
     var size = new Size(
-        MediaQueryData.fromWindow(ui.window).size.width, widget.height);
+        widget.width??MediaQueryData.fromWindow(ui.window).size.width, widget.height);
     return new GestureDetector(
       onPanUpdate: (DragUpdateDetails details) {
         setState(() {

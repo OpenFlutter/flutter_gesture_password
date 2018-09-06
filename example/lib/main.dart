@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.red,
                   margin: const EdgeInsets.only(top: 100.0),
                   child: new GesturePassword(
+                    width: 200.0,
                     successCallback: (s) {
                       print("successCallback$s");
                       scaffoldState.currentState?.showSnackBar(new SnackBar(
