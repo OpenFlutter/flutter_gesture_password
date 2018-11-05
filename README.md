@@ -1,13 +1,7 @@
 # gesture_password
 
-##### flutter的手势密码
+## flutter的手势密码
 
-## Getting Started
-
-For help getting started with Flutter, view our online [documentation](https://flutter.io/).
-
-For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
-![image](https://github.com/zhangruiyu/flutter_gesture_password/blob/master/wow.gif)
 
 ## How to use ?
 
@@ -45,7 +39,7 @@ import 'package:gesture_password/mini_gesture_password.dart';
 * selectedCallback 经过任意一个后回调,返回值为选中的index相加的字符串
 
 ## Example
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:gesture_password/gesture_password.dart';
 import 'package:gesture_password/mini_gesture_password.dart';
