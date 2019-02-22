@@ -1,6 +1,6 @@
 # gesture_password
 
-##### flutter的手势密码
+##### Flutter的手势密码
 
 ## Getting Started
 
