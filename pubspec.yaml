@@ -1,11 +1,11 @@
 name: gesture_password
 description: A new flutter GesturePassword
-version: 0.0.4
+version: 0.0.5
 author: zhangruiyu <157418979@qq.com>
 homepage: https://github.com/zhangruiyu/flutter_gesture_password
 
 environment:
-  sdk: ">=1.23.0 <3.0.0"
+  sdk: ">=2.3.0 <3.0.0"
 
 
 dependencies:
