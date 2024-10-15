@@ -4,7 +4,11 @@ import 'package:gesture_password/gesture_password.dart';
 
 class CircleItemPainter extends CustomPainter {
   CircleItemPainter(
-      this.itemAttribute, this.touchPoint, this.circleList, this.lineList);
+    this.itemAttribute,
+    this.touchPoint,
+    this.circleList,
+    this.lineList,
+  );
 
   final Offset touchPoint;
   final List<Circle> circleList;
@@ -14,23 +18,23 @@ class CircleItemPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     //没选中小圆
-    final normalCirclePaint = new Paint()
+    final normalCirclePaint = Paint()
       ..color = itemAttribute.normalColor
       ..style = PaintingStyle.fill;
 
     //选中小圆
-    final selectedCirclePaint = new Paint()
+    final selectedCirclePaint = Paint()
       ..color = itemAttribute.selectedColor
       ..style = PaintingStyle.fill;
 
     //选中大圆
-    final selectedBigCirclePaint = new Paint()
+    final selectedBigCirclePaint = Paint()
       ..color = itemAttribute.selectedColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = itemAttribute.circleStrokeWidth;
 
     //线
-    final linePaint = new Paint()
+    final linePaint = Paint()
       ..color = itemAttribute.selectedColor
       ..style = PaintingStyle.fill
       ..strokeWidth = itemAttribute.lineStrokeWidth;

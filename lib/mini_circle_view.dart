@@ -3,7 +3,11 @@ import 'package:flutter/widgets.dart';
 import 'package:gesture_password/mini_gesture_password.dart';
 
 class MiniCircleView extends CustomPainter {
-  MiniCircleView(this.itemAttribute, this.circleList, this.selectedStr);
+  MiniCircleView(
+    this.itemAttribute,
+    this.circleList,
+    this.selectedStr,
+  );
 
   final List<Circle> circleList;
   final MiniItemAttribute itemAttribute;
@@ -12,12 +16,12 @@ class MiniCircleView extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     //没选中小圆
-    final normalCirclePaint = new Paint()
+    final normalCirclePaint = Paint()
       ..color = itemAttribute.normalColor
       ..style = PaintingStyle.fill;
 
     //选中小圆
-    final selectedCirclePaint = new Paint()
+    final selectedCirclePaint = Paint()
       ..color = itemAttribute.selectedColor
       ..style = PaintingStyle.fill;
 

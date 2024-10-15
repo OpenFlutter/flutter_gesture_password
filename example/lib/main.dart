@@ -7,36 +7,33 @@ void main() => runApp(new MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key,  required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   GlobalKey<MiniGesturePasswordState> miniGesturePassword =
       new GlobalKey<MiniGesturePasswordState>();
 
-  GlobalKey<ScaffoldState> scaffoldState = new GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
-        key: scaffoldState,
         appBar: new AppBar(
           title: new Text('Plugin example app'),
         ),
@@ -53,13 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 200.0,
                     successCallback: (s) {
                       print("successCallback$s");
-                      scaffoldState.currentState?.showSnackBar(new SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
                           content: new Text('successCallback:$s')));
                       miniGesturePassword.currentState?.setSelected('');
                     },
                     failCallback: () {
                       print('failCallback');
-                      scaffoldState.currentState?.showSnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
                           new SnackBar(content: new Text('failCallback')));
                       miniGesturePassword.currentState?.setSelected('');
                     },

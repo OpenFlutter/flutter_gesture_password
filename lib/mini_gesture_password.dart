@@ -6,19 +6,19 @@ class MiniGesturePassword extends StatefulWidget {
   final MiniItemAttribute attribute;
   final double height;
 
-  MiniGesturePassword(
-      {Key key,
-        this.attribute: MiniItemAttribute.normalAttribute,
-        this.height: 60.0})
-      : super(key: key);
+  MiniGesturePassword({
+    Key? key,
+    this.attribute = MiniItemAttribute.normalAttribute,
+    this.height = 60.0,
+  }) : super(key: key);
 
   @override
-  MiniGesturePasswordState createState() => new MiniGesturePasswordState();
+  MiniGesturePasswordState createState() => MiniGesturePasswordState();
 }
 
 class MiniGesturePasswordState extends State<MiniGesturePassword> {
   Offset touchPoint = Offset.zero;
-  List<Circle> circleList = new List<Circle>();
+  List<Circle> circleList = <Circle>[];
   String selectedStr = '';
 
   @override
@@ -29,7 +29,7 @@ class MiniGesturePasswordState extends State<MiniGesturePassword> {
     for (int i = 0; i < 9; i++) {
       num tempX = (i % 3 + 1) * 2 * hor - hor;
       num tempY = (i ~/ 3 + 1) * 2 * ver - ver;
-      circleList.add(new Circle(new Offset(tempX, tempY), i));
+      circleList.add(Circle(Offset(tempX.toDouble(), tempY.toDouble()), i));
     }
     super.initState();
   }
@@ -42,12 +42,11 @@ class MiniGesturePasswordState extends State<MiniGesturePassword> {
 
   @override
   Widget build(BuildContext context) {
-    var size = new Size(widget.height, widget.height);
-    return new Container(
-      child: new CustomPaint(
+    var size = Size(widget.height, widget.height);
+    return Container(
+      child: CustomPaint(
           size: size,
-          painter:
-          new MiniCircleView(widget.attribute, circleList, selectedStr)),
+          painter: MiniCircleView(widget.attribute, circleList, selectedStr)),
     );
   }
 }
@@ -87,8 +86,8 @@ class MiniItemAttribute {
       selectedColor: const Color(0xFF1565C0));
 
   const MiniItemAttribute({
-    this.normalColor,
-    this.selectedColor,
-    this.smallCircleR: 6.0,
+    required this.normalColor,
+    required this.selectedColor,
+    this.smallCircleR = 6.0,
   });
 }

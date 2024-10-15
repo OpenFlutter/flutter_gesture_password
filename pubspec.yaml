@@ -5,7 +5,7 @@ author: zhangruiyu <157418979@qq.com>
 homepage: https://github.com/zhangruiyu/flutter_gesture_password
 
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: ">=2.15.0 <4.0.0"
 
 
 dependencies:
